@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode - Subtle Gradient Background */
+    --background-start: 240 100% 99%; /* #fdfbff */
+    --background-end: 220 100% 97%; /* #f0f4ff */
+    --background: linear-gradient(to bottom right, hsl(var(--background-start)), hsl(var(--background-end)));
+
+    --foreground: 215 27.9% 16.9%; /* Dark text: #1F2937 */
+
+    --card: 0 0% 100%; /* Pure white for cards */
+    --card-foreground: 215 27.9% 16.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 27.9% 16.9%;
+
+    --primary: 215 27.9% 16.9%; /* Primary button/accent color: #1F2937 */
+    --primary-foreground: 0 0% 100%; /* Text on primary: #FFFFFF */
+
+    --secondary: 220 12.5% 95.1%; /* Secondary background for footer: #F3F4F6 */
+    --secondary-foreground: 215 27.9% 16.9%;
+
+    --muted: 220 12.5% 95.1%;
+    --muted-foreground: 215 14.3% 56.1%; /* Muted text: #6B7280 (gray-500) */
+
+    --accent: 220 12.5% 95.1%; /* Accent background for hover effects */
+    --accent-foreground: 215 27.9% 16.9%;
+
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 220 12.5% 95.1%;
+
+    --border: 214.3 31.8% 91.4%; /* Light border */
+    --input: 0 0% 100%; /* White input background */
+    --ring: 215 27.9% 16.9%; /* Ring color for focus */
+
+    --radius: 0.5rem;
+
+    /* Gradient for text */
+    --gradient-blue: 220 80% 50%;
+    --gradient-purple: 270 80% 50%;
+  }
+
+  .dark {
+    /* Dark Mode - Adjusted for subtle dark gradient */
+    --background-start: 218 20.2% 10.1%; /* Darker background: #111827 */
+    --background-end: 218 20.2% 15.1%; /* Slightly lighter dark: #1F2937 */
+    --background: linear-gradient(to bottom right, hsl(var(--background-start)), hsl(var(--background-end)));
+
+    --foreground: 220 12.5% 95.1%; /* Light text: #F3F4F6 */
+
+    --card: 218 20.2% 10.1%; /* Slightly darker dark for cards: #111827 */
+    --card-foreground: 220 12.5% 95.1%;
+
+    --popover: 218 20.2% 10.1%;
+    --popover-foreground: 220 12.5% 95.1%;
+
+    --primary: 220 12.5% 95.1%; /* Primary button/accent color: #F3F4F6 */
+    --primary-foreground: 215 27.9% 16.9%; /* Text on primary: #1F2937 */
+
+    --secondary: 218 20.2% 10.1%; /* Secondary background for footer: #111827 */
+    --secondary-foreground: 220 12.5% 95.1%;
+
+    --muted: 218 20.2% 15.1%;
+    --muted-foreground: 215 14.3% 70.1%; /* Muted text: #9CA3AF (gray-400) */
+
+    --accent: 218 20.2% 15.1%;
+    --accent-foreground: 220 12.5% 95.1%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 220 12.5% 95.1%;
+
+    --border: 217.2 32.6% 17.5%; /* Dark border */
+    --input: 218 20.2% 10.1%; /* Dark input background: #111827 */
+    --ring: 220 12.5% 95.1%; /* Ring color for focus */
+
+    --radius: 0.5rem;
+
+    /* Gradient for text (can be same or different for dark mode) */
+    --gradient-blue: 220 80% 70%;
+    --gradient-purple: 270 80% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    background: var(--background); /* Use CSS variable for gradient */
+    @apply text-foreground transition-colors duration-500; /* Smooth transition for theme change */
+  }
+}
+
+/* Custom glow/shadow for profile image */
+.glow-shadow {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glow-shadow {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05), 0 0 30px rgba(255, 255, 255, 0.02);
+}
+
+/* Glassmorphism effect */
+.glassmorphism-border {
+  border: 1px solid rgba(var(--border-rgb), 0.2); /* Subtle border */
+}
+
+/* Gradient text utility class */
+.text-gradient-blue-purple {
+  background-image: linear-gradient(to right, hsl(var(--gradient-blue)), hsl(var(--gradient-purple)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Marquee animations */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes marquee-vertical-reverse {
+  from {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse var(--duration) linear infinite;
+}
+
+.animate-marquee-vertical-reverse {
+  animation: marquee-vertical-reverse var(--duration) linear infinite;
+}
+
+.group-hover\:paused:hover {
+  animation-play-state: paused;
+}
