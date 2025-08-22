@@ -1,6 +1,6 @@
 import type { IconType } from "react-icons"
 import {
-  SiJavascript,
+ SiJavascript,
   SiC,
   SiPostgresql,
   SiMongodb,
@@ -15,11 +15,22 @@ import {
   SiIntellijidea,
   SiCanva,
   SiFigma,
-  SiFirebase, // Added Firebase
-  SiRedux, // Added Redux
+  SiFirebase,
+  SiRedux,
+  SiPython,
+ 
+  SiDotnet,
+  SiNumpy,
+  SiPandas,
+  SiStreamlit,
+  SiMysql,
+  SiPostman,
+  SiVisualstudio,
+  SiFlux, // Added Redux
 } from "react-icons/si"
 import { FaJava } from "react-icons/fa"
-import { TbBrandVscode } from "react-icons/tb" // Import TbBrandVscode
+import { TbBrandVscode , TbBrandCSharp} from "react-icons/tb" // Import TbBrandVscode
+
 
 export const personalData = {
   name: "Soumadeep Ghosh",
@@ -36,21 +47,46 @@ export const personalData = {
 export const profileSummary = `Motivated full-stack web developer with expertise in Java, JavaScript, and MERN stack technologies. Recently completed final year of B.Tech, with a strong passion for building scalable applications and solving real-world problems. Experienced in collaborative development and project-based learning, eager to contribute to dynamic tech teams.`
 
 export const skills: { name: string; icon: string }[] = [
+  // 🔹 Programming Languages
   { name: "Java", icon: "FaJava" },
-  { name: "JavaScript", icon: "SiJavascript" },
   { name: "C", icon: "SiC" },
-  { name: "SQL", icon: "SiPostgresql" }, // Using PostgreSQL icon for generic SQL
-  { name: "MongoDB", icon: "SiMongodb" },
-  { name: "Express.js", icon: "SiExpress" },
+  { name: "C#", icon: "TbBrandCSharp" },
+  { name: "Python", icon: "SiPython" },
+  { name: "JavaScript", icon: "SiJavascript" },
+
+  // 🔹 Frameworks & Libraries
   { name: "React.js", icon: "SiReact" },
-  { name: "Node.js", icon: "SiNodedotjs" },
   { name: "Next.js", icon: "SiNextdotjs" },
+  { name: "Node.js", icon: "SiNodedotjs" },
+  { name: "Express.js", icon: "SiExpress" },
+  { name: "Redux", icon: "SiRedux" },
+  { name: "Flux", icon: "SiFlux" },
+  { name: ".NET Core", icon: "SiDotnet" },
+  { name: "Streamlit", icon: "SiStreamlit" },
+
+  // 🔹 Python Libraries
+  { name: "NumPy", icon: "SiNumpy" },
+  { name: "Pandas", icon: "SiPandas" },
+
+  // 🔹 Databases
+  { name: "PostgreSQL", icon: "SiPostgresql" },
+  { name: "MySQL", icon: "SiMysql" },
+  { name: "MongoDB", icon: "SiMongodb" },
+
+  // 🔹 Web Technologies
   { name: "HTML", icon: "SiHtml5" },
   { name: "CSS", icon: "SiCss3" },
   { name: "Bootstrap", icon: "SiBootstrap" },
+
+  // 🔹 Tools & IDEs
   { name: "VS Code", icon: "TbBrandVscode" },
+  { name: "Visual Studio", icon: "SiVisualstudio" },
   { name: "PyCharm", icon: "SiPycharm" },
   { name: "IntelliJ IDEA", icon: "SiIntellijidea" },
+  { name: "Postman", icon: "SiPostman" },
+
+  // 🔹 Design & Cloud
+  { name: "Firebase", icon: "SiFirebase" },
   { name: "Canva", icon: "SiCanva" },
   { name: "Figma", icon: "SiFigma" },
 ]
@@ -208,7 +244,15 @@ export const iconComponents: { [key: string]: IconType } = {
   FaJava,
   SiJavascript,
   SiC,
+  SiPython,
+  TbBrandCSharp,
+  SiDotnet,
+  SiNumpy,
+  SiPandas,
+  SiStreamlit,
+  SiFlux,
   SiPostgresql,
+  SiMysql,
   SiMongodb,
   SiExpress,
   SiReact,
@@ -218,8 +262,10 @@ export const iconComponents: { [key: string]: IconType } = {
   SiCss3,
   SiBootstrap,
   TbBrandVscode,
+  SiVisualstudio,
   SiPycharm,
   SiIntellijidea,
+  SiPostman,
   SiCanva,
   SiFigma,
   SiFirebase,
